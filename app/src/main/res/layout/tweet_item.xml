@@ -30,7 +30,7 @@
                 android:id="@+id/fullNameTxt"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/fullNameTxt"
+                android:text="User name"
                 android:textSize="18sp"
                 android:textStyle="bold" />
 
@@ -50,7 +50,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/fullNameTxt"
-                android:text="@string/tweetTxt"
+                android:text="Este é apenas mais um tweet"
                 android:textSize="16sp" />
 
         </RelativeLayout>

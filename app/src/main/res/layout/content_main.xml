@@ -26,15 +26,14 @@
                 android:id="@+id/hashtagTxt"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/hashtagTxt"
+                android:text="#hashtag"
                 android:textSize="28sp"
                 android:textColor="#a7a7a7"/>
 
             <TextView
-                android:id="@+id/trade"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/trade"
+                android:text="Toque na hastag para trocar"
                 android:textSize="12sp" />
 
         </LinearLayout>
@@ -52,7 +51,7 @@
                 android:id="@+id/hashtagEdt"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:hint="@string/hashtagEdt"
+                android:hint="Digite a hashtag"
                 android:layout_weight="4"/>
 
             <Button
@@ -62,7 +61,7 @@
                 android:layout_weight="1"
                 android:background="@android:color/transparent"
                 android:textColor="@color/colorAccent"
-                android:text="@string/changeHashtagBtn"
+                android:text="Ok"
                 android:textSize="12sp" />
 
         </LinearLayout>
