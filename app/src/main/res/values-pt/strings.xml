@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <string name="app_name">TwitterReader</string>
+
+  <string name="navigation_drawer_open">Abrir Navegação</string>
+  <string name="navigation_drawer_close">Fechar Navegação</string>
+  <string name="fav">Favoritos</string>
+  <string name="logout">Sair</string>
+  <string name="settings">Opções</string>
+  <string name="manageLabelTxt">Usuários com a hashtag</string>
+  <string name="noparticipants">Não existem participantes com essa hashtag</string>
+  <string name="manageBtn">Sortear Participantes</string>
+  <string name="trade">Toque na hastag para trocar</string>
+  <string name="hashtagEdt">Digite a hasthtag</string>
+  <string name="changeHashtagBtn">Ok</string>
+  <string name="action_settings">Opções</string>
+  <string name="hashtagTxt">#hashtag</string>
+  <string name="fullNameTxt">Nome de Usuário</string>
+  <string name="tweetTxt">Este é apenas mais um tweet</string>
+  <string name="gerencpart">Gerenciar Participantes</string>
+
+  <string name="user">Usuario 1</string>
+</resources>
