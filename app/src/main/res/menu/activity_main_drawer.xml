@@ -5,15 +5,17 @@
         <item
             android:id="@+id/fav"
             android:icon="@drawable/ic_star_rate_black_18dp"
-            android:title="Favoritos" />
+            android:title="@string/fav" />
     </group>
 
-    <item android:title="Configurações">
+    <item
+        android:id="@+id/settings"
+        android:title="@string/settings">
         <menu>
             <item
                 android:id="@+id/logout"
                 android:icon="@android:drawable/ic_lock_power_off"
-                android:title="Sair" />
+                android:title="@string/logout" />
         </menu>
     </item>
 
