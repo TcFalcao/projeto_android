@@ -11,7 +11,7 @@
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
         android:textStyle="bold"
-        android:text="Usuários participantes da hashtag:"/>
+        android:text="@string/manageLabelTxt"/>
 
     <TextView
         android:id="@+id/manageHashtagTxt"
@@ -24,16 +24,17 @@
         android:textColor="#a7a7a7"/>
 
     <TextView
+        android:id="@+id/noparticipants"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
-        android:text="Não há usuários participantes"/>
+        android:text="@string/noparticipants"/>
 
     <Button
         android:id="@+id/manageBtn"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:text="Sortear Participante"
+        android:text="@string/manageBtn"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
         android:layout_alignParentBottom="true"
