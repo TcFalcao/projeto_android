@@ -21,14 +21,17 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import java.util.List;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import student.twitterreader.tweet.Tweet;
 import student.twitterreader.tweet.TweetAdapter;
 import student.twitterreader.tweet.TweetService;
 
 public class MainActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener {
+        implements NavigationView.OnNavigationItemSelectedListener, TweetService.OnTweetsRetrievedListener {
 
     @BindView(R.id.twittesList)
     RecyclerView mTweetsListView;
@@ -62,10 +65,7 @@ public class MainActivity extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
-        mTweetService = new TweetService();
-        TweetAdapter adapter = new TweetAdapter(this, mTweetService.getFakeTweets());
-
-        mTweetsListView.setAdapter(adapter);
+        mTweetService = TweetService.getInstance();
 
         mTweetsListView.setLayoutManager(new LinearLayoutManager(this));
 
@@ -94,6 +94,8 @@ public class MainActivity extends AppCompatActivity
 
         mHashtagTxt.setText(hashtag);
         hideKeyboard();
+
+        mTweetService.listTweets(hashtag, this);
     }
 
     @OnClick(R.id.manageBtn)
@@ -159,5 +161,11 @@ public class MainActivity extends AppCompatActivity
             InputMethodManager imm = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
             imm.showSoftInput(mHashtagEdt, 0);
         }
+    }
+
+    @Override
+    public void onTweetsRetrieved(List<Tweet> tweets) {
+        TweetAdapter adapter = new TweetAdapter(this, tweets);
+        mTweetsListView.setAdapter(adapter);
     }
 }

@@ -7,7 +7,7 @@
   <string name="fav">Favoritos</string>
   <string name="logout">Sair</string>
   <string name="settings">Opções</string>
-  <string name="manageLabelTxt">Usuários com a hashtag</string>
+  <string name="manageLabelTxt">Usuários participantes da hashtag</string>
   <string name="noparticipants">Não existem participantes com essa hashtag</string>
   <string name="manageBtn">Sortear Participantes</string>
   <string name="trade">Toque na hastag para trocar</string>

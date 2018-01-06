@@ -21,41 +21,39 @@ import twitter4j.User;
  * Created by tuliodesouza on 26/11/17.
  */
 
-public class TweetAdapter extends RecyclerView.Adapter<TweetAdapter.TweetViewHolder> {
+public class UserAdapter extends RecyclerView.Adapter<UserAdapter.TweetViewHolder> {
 
     private Context mContext;
-    private List<Tweet> mTweets;
+    private List<User> mUsers;
 
-    public TweetAdapter(Context context, List<Tweet> tweets) {
+    public UserAdapter(Context context, List<User> users) {
         this.mContext = context;
-        this.mTweets = tweets;
+        this.mUsers = users;
     }
 
     @Override
-    public TweetAdapter.TweetViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public UserAdapter.TweetViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
 
-        View view = LayoutInflater.from(mContext).inflate(R.layout.tweet_item, parent, false);
+        View view = LayoutInflater.from(mContext).inflate(R.layout.user_item, parent, false);
         TweetViewHolder holder = new TweetViewHolder(view);
 
         return holder;
     }
 
     @Override
-    public void onBindViewHolder(TweetAdapter.TweetViewHolder holder, int position) {
-        Tweet tweet = mTweets.get(position);
+    public void onBindViewHolder(UserAdapter.TweetViewHolder holder, int position) {
 
-        User user = tweet.getUser();
+        User user = mUsers.get(position);
 
         Picasso.with(mContext).load(user.getProfileImageURL()).into(holder.profileImage);
 
         holder.fullName.setText(user.getName());
         holder.userName.setText("@" + user.getScreenName());
-        holder.tweetTxt.setText(tweet.getTweet());
     }
 
     @Override
     public int getItemCount() {
-        return mTweets.size();
+        return mUsers.size();
     }
 
     public static class TweetViewHolder extends RecyclerView.ViewHolder {
@@ -66,9 +64,6 @@ public class TweetAdapter extends RecyclerView.Adapter<TweetAdapter.TweetViewHol
         TextView fullName;
         @BindView(R.id.userNameTxt)
         TextView userName;
-        @BindView(R.id.tweetTxt)
-        TextView tweetTxt;
-
 
         public TweetViewHolder(View view) {
             super(view);

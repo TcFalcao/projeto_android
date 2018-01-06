@@ -38,21 +38,12 @@
                 android:id="@+id/userNameTxt"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="5dp"
-                android:layout_toRightOf="@id/fullNameTxt"
+                android:layout_below="@id/fullNameTxt"
                 android:text="\@userName"
                 android:textColor="#9c9c9c"
                 android:layout_marginTop="2dp"
                 android:textSize="14sp"
                 android:textStyle="italic" />
-
-            <TextView
-                android:id="@+id/tweetTxt"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/fullNameTxt"
-                android:text="@string/tweetTxt"
-                android:textSize="14sp" />
 
         </RelativeLayout>
     </LinearLayout>

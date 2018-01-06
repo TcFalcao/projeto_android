@@ -1,36 +1,27 @@
 package student.twitterreader.tweet;
 
+import twitter4j.User;
+
 /**
  * Created by tuliodesouza on 26/11/17.
  */
 
 public class Tweet {
 
-    private String fullUserName;
-    private String userName;
-
+    User user;
     private String tweet;
 
-    public Tweet(String fullUserName, String userName, String tweet) {
-        this.fullUserName = fullUserName;
-        this.userName = userName;
+    public Tweet(User user, String tweet) {
+        this.user = user;
         this.tweet = tweet;
     }
 
-    public String getFullUserName() {
-        return fullUserName;
+    public User getUser() {
+        return this.user;
     }
 
-    public void setFullUserName(String fullUserName) {
-        this.fullUserName = fullUserName;
-    }
-
-    public String getUserName() {
-        return userName;
-    }
-
-    public void setUserName(String userName) {
-        this.userName = userName;
+    public void setUser(User user) {
+        this.user = user;
     }
 
     public String getTweet() {
