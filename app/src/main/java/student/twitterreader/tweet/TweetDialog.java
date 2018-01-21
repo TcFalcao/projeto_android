@@ -4,19 +4,15 @@ import android.app.Dialog;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.widget.Button;
 import android.widget.EditText;
-import android.widget.GridLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
-
-import com.squareup.picasso.Picasso;
-
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import com.squareup.picasso.Picasso;
+import java.io.UnsupportedEncodingException;
+import java.net.URLEncoder;
 import student.twitterreader.R;
 import twitter4j.User;
 
@@ -24,44 +20,39 @@ import twitter4j.User;
  * Created by tuliodesouza on 22/12/2017.
  */
 
-public class SortUserDialog extends Dialog {
+public class TweetDialog extends Dialog {
 
-    @BindView(R.id.profile_image)
-    ImageView profileImage;
-    @BindView(R.id.fullNameTxt)
-    TextView fullName;
-    @BindView(R.id.userNameTxt)
-    TextView userName;
     @BindView(R.id.edt_direct)
     EditText mDirectTweet;
 
     private Context mContext;
-    private User mUser;
+    private String mHashtag;
 
-    public SortUserDialog(@NonNull Context context, User user) {
+    public TweetDialog(@NonNull Context context, String hashtag) {
         super(context);
         mContext = context;
-        mUser = user;
+        mHashtag = hashtag;
     }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.sort_dialog);
+        setContentView(R.layout.tweet_dialog);
         ButterKnife.bind(this);
 
-        Picasso.with(mContext).load(mUser.getProfileImageURL()).into(profileImage);
-
-        fullName.setText(mUser.getName());
-        userName.setText("@" + mUser.getScreenName());
-
-        mDirectTweet.setText("@" + mUser.getScreenName() + " " + mContext.getString(R.string.congrat_direct));
+        mDirectTweet.setText(mHashtag);
     }
 
     @OnClick(R.id.send_direct_btn)
     public void onDirectSendClick() {
         TweetService service = TweetService.getInstance();
-        service.tweetText(mContext, mDirectTweet.getText().toString());
+        String tweet = "";
+        try {
+            tweet = URLEncoder.encode(mDirectTweet.getText().toString(), "utf-8");
+        } catch (UnsupportedEncodingException e) {
+            e.printStackTrace();
+        }
+        service.tweetText(mContext, tweet);
         dismiss();
     }
 

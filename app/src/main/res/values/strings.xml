@@ -16,8 +16,9 @@
     <string name="hashtagTxt">#hashtag</string>
     <string name="user">User 1</string>
     <string name="fullNameTxt">Username</string>
-    <string name="tweetTxt">This is just another tweet</string>
+    <string name="tweetTxt">Tweet</string>
     <string name="gerencpart">Manage Participants</string>
+    <string name="congrat_direct">Congratulations! You were drawn.</string>
 
     <string name="action_settings">Settings</string>
   </resources>

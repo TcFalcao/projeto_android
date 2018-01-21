@@ -16,8 +16,9 @@
   <string name="action_settings">Opções</string>
   <string name="hashtagTxt">#hashtag</string>
   <string name="fullNameTxt">Nome de Usuário</string>
-  <string name="tweetTxt">Este é apenas mais um tweet</string>
+  <string name="tweetTxt">Tweet</string>
   <string name="gerencpart">Gerenciar Participantes</string>
+  <string name="congrat_direct">Parabéns! Você foi sorteado.</string>
 
   <string name="user">Usuario 1</string>
 </resources>

@@ -1,8 +1,15 @@
 package student.twitterreader.tweet;
 
+import android.app.Activity;
+import android.content.Context;
+import android.content.Intent;
+import android.content.SharedPreferences;
+import android.net.Uri;
 import android.os.AsyncTask;
 import android.util.Log;
 
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -16,6 +23,8 @@ import twitter4j.Twitter;
 import twitter4j.TwitterException;
 import twitter4j.TwitterFactory;
 import twitter4j.User;
+import twitter4j.auth.AccessToken;
+import twitter4j.auth.RequestToken;
 import twitter4j.conf.ConfigurationBuilder;
 
 /**
@@ -32,8 +41,8 @@ public class TweetService {
     private static TweetService instance;
     private OnTweetsRetrievedListener mListener;
 
-    private List<Tweet> mCurrentTweets;
     private Map<User, List<Tweet>> mCurrentTweetMappedByUser;
+
 
     private String mCurrentSearch;
 
@@ -50,6 +59,12 @@ public class TweetService {
             instance = new TweetService();
         }
         return instance;
+    }
+
+    public void tweetText(Context context, String text) {
+        String tweetUrl = "https://twitter.com/intent/tweet?text=" + text;
+        Uri uri = Uri.parse(tweetUrl);
+        context.startActivity(new Intent(Intent.ACTION_VIEW, uri));
     }
 
     public void listTweets(String search, OnTweetsRetrievedListener listener) {
@@ -113,7 +128,6 @@ public class TweetService {
             }
 
             mListener.onTweetsRetrieved(tweets);
-            mCurrentTweets = tweets;
         }
     }
 

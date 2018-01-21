@@ -11,6 +11,7 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 import student.twitterreader.MainActivity;
 import student.twitterreader.R;
+import student.twitterreader.tweet.TweetService;
 
 /**
  * Created by tuliodesouza on 26/11/17.
@@ -30,6 +31,7 @@ public class LoginActivity extends AppCompatActivity {
 
     @OnClick(R.id.loginBtn)
     public void onLoginClick() {
+
         Intent it = new Intent(this, MainActivity.class);
         startActivity(it);
     }

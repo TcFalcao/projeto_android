@@ -26,8 +26,10 @@ import java.util.List;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import student.twitterreader.tweet.SortUserDialog;
 import student.twitterreader.tweet.Tweet;
 import student.twitterreader.tweet.TweetAdapter;
+import student.twitterreader.tweet.TweetDialog;
 import student.twitterreader.tweet.TweetService;
 
 public class MainActivity extends AppCompatActivity
@@ -129,8 +131,11 @@ public class MainActivity extends AppCompatActivity
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
+        if (id == R.id.action_tweet) {
+
+            TweetDialog dialog = new TweetDialog(this, mHashtagTxt.getText().toString());
+            dialog.show();
+
         }
 
         return super.onOptionsItemSelected(item);
