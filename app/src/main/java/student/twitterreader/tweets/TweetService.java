@@ -1,21 +1,16 @@
-package student.twitterreader.tweet;
+package student.twitterreader.tweets;
 
-import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.AsyncTask;
-import android.util.Log;
 
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.Set;
 
+import student.twitterreader.model.Tweet;
 import twitter4j.Query;
 import twitter4j.QueryResult;
 import twitter4j.Status;
@@ -23,8 +18,6 @@ import twitter4j.Twitter;
 import twitter4j.TwitterException;
 import twitter4j.TwitterFactory;
 import twitter4j.User;
-import twitter4j.auth.AccessToken;
-import twitter4j.auth.RequestToken;
 import twitter4j.conf.ConfigurationBuilder;
 
 /**
@@ -139,6 +132,10 @@ public class TweetService {
         List<User> users = new ArrayList<>();
         users.addAll(mCurrentTweetMappedByUser.keySet());
         return users;
+    }
+
+    public List<Tweet> getUserTweets(User user) {
+        return mCurrentTweetMappedByUser.get(user);
     }
 
 }

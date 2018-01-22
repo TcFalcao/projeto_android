@@ -10,15 +10,19 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".MainActivity"
+            android:name=".tweets.TweetSearchActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar"></activity>
         <activity
-            android:name=".ManageActivity"
+            android:name=".users.UserListActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar"></activity>
         <activity
-            android:name=".login.LoginActivity"
+          android:name=".tweets.UserTweetsActivity"
+          android:label="@string/app_name"
+          android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity
+            android:name=".splash.SplashActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>

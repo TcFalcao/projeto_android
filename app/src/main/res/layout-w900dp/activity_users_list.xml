@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  android:weightSum="10"
+  android:orientation="horizontal">
+
+    <RelativeLayout
+      android:id="@+id/drawer_layout"
+      android:layout_width="0dp"
+      android:layout_weight="3"
+      android:layout_height="match_parent">
+
+        <TextView
+          android:id="@+id/manageLabelTxt"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_margin="10dp"
+          android:textStyle="bold"
+          android:text="@string/manageLabelTxt"/>
+
+        <TextView
+          android:id="@+id/manageHashtagTxt"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:text="#hashtag"
+          android:layout_margin="10dp"
+          android:layout_below="@id/manageLabelTxt"
+          android:textSize="28sp"
+          android:textColor="#a7a7a7"/>
+
+        <android.support.v7.widget.RecyclerView
+          android:id="@+id/usersList"
+          android:layout_below="@id/manageHashtagTxt"
+          android:layout_marginTop="10dp"
+          android:layout_marginBottom="50dp"
+          android:layout_width="match_parent"
+          android:layout_height="match_parent">
+
+        </android.support.v7.widget.RecyclerView>
+
+        <Button
+          android:id="@+id/manageBtn"
+          android:layout_width="match_parent"
+          android:layout_height="50dp"
+          android:text="@string/manageBtn"
+          android:layout_marginLeft="10dp"
+          android:layout_marginRight="10dp"
+          android:layout_alignParentBottom="true"
+          android:backgroundTint="@color/colorAccent"
+          android:layout_gravity="bottom"/>
+    </RelativeLayout>
+
+    <LinearLayout
+      android:id="@+id/user_tweets_fragment_container"
+      android:layout_width="0dp"
+      android:layout_height="match_parent"
+      android:layout_weight="7"
+      android:orientation="vertical"
+      android:weightSum="10">
+    </LinearLayout>
+
+
+</LinearLayout>

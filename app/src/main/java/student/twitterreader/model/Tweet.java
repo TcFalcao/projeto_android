@@ -1,4 +1,4 @@
-package student.twitterreader.tweet;
+package student.twitterreader.model;
 
 import twitter4j.User;
 

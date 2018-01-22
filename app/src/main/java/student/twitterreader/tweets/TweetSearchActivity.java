@@ -1,10 +1,8 @@
-package student.twitterreader;
+package student.twitterreader.tweets;
 
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
@@ -17,7 +15,6 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.inputmethod.InputMethodManager;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
@@ -26,13 +23,11 @@ import java.util.List;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
-import student.twitterreader.tweet.SortUserDialog;
-import student.twitterreader.tweet.Tweet;
-import student.twitterreader.tweet.TweetAdapter;
-import student.twitterreader.tweet.TweetDialog;
-import student.twitterreader.tweet.TweetService;
+import student.twitterreader.users.UserListActivity;
+import student.twitterreader.R;
+import student.twitterreader.model.Tweet;
 
-public class MainActivity extends AppCompatActivity
+public class TweetSearchActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener, TweetService.OnTweetsRetrievedListener {
 
     @BindView(R.id.twittesList)
@@ -52,7 +47,7 @@ public class MainActivity extends AppCompatActivity
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_tweet_search);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -102,7 +97,7 @@ public class MainActivity extends AppCompatActivity
 
     @OnClick(R.id.manageBtn)
     public void onManageClick() {
-        Intent it = new Intent(this, ManageActivity.class);
+        Intent it = new Intent(this, UserListActivity.class);
         startActivity(it);
     }
 

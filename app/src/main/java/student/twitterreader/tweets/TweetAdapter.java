@@ -1,4 +1,4 @@
-package student.twitterreader.tweet;
+package student.twitterreader.tweets;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
@@ -15,6 +15,7 @@ import java.util.List;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import student.twitterreader.R;
+import student.twitterreader.model.Tweet;
 import twitter4j.User;
 
 /**
