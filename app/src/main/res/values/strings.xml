@@ -19,6 +19,11 @@
     <string name="tweetTxt">Tweet</string>
     <string name="gerencpart">Manage Participants</string>
     <string name="congrat_direct">Congratulations! You were drawn.</string>
+    <string name="Cancelar">Cancel</string>
+    <string name="Texto_do_twitter">Twitter text</string>
+    <string name="Enviar">Send</string>
+    <string name="user_draw">User draw: </string>
+    <string name="Send_twitter">Send a twitter to this participant</string>
 
     <string name="action_settings">Settings</string>
   </resources>

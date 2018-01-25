@@ -9,7 +9,7 @@
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:layout_marginTop="15dp"
-    android:text="Usuário sorteado: "
+    android:text="@string/user_draw"
     android:textSize="18dp" />
 
   <LinearLayout
@@ -61,7 +61,7 @@
     <TextView
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
-      android:text="Envie um twitter a este participante"/>
+      android:text="@string/Send_twitter"/>
 
     <EditText
       android:id="@+id/edt_direct"
@@ -78,13 +78,13 @@
         android:id="@+id/cancel_direct_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Cancelar" />
+        android:text="@string/Cancelar" />
 
       <Button
         android:id="@+id/send_direct_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Enviar" />
+        android:text="@string/Enviar" />
 
     </LinearLayout>
 

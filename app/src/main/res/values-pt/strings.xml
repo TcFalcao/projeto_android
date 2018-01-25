@@ -19,6 +19,11 @@
   <string name="tweetTxt">Tweet</string>
   <string name="gerencpart">Gerenciar Participantes</string>
   <string name="congrat_direct">Parabéns! Você foi sorteado.</string>
+  <string name="Cancelar">Cancelar</string>
+  <string name="Texto_do_twitter">Texto do twitter</string>
+  <string name="Enviar">Enviar</string>
+  <string name="user_draw">Usuário sorteado: </string>
+  <string name="Send_twitter">Envie um twitter a este participante</string>
 
   <string name="user">Usuario 1</string>
 </resources>
